@@ -34,6 +34,8 @@ kirjutada ja mängu jõuab veel õigel ajal Steami üles panna!
 
 Mäng on loodud mängumootor [PyGame](https://www.pygame.org/docs/) abil.
 
+Kui sul läheb jooksvalt lahendamisega abi vaja siis oleme antud töötoast teinud ka video: [Video Flappy Bird lahendusest](https://www.youtube.com/watch?v=jMSewTuECrQ)
+
 ## Ülesanded
 
 Oleme sulle ette valmistanud ülesanded ning ka lahendamiseks vajalikud juhtnöörid. Kui vajad abi, tõsta julgelt käsi 🙋‍♀️
@@ -45,7 +47,9 @@ Enne programmeerima hakkamist tuleb meil avada kooditöötlusprogramm PyCharm, l
 PyGame. Kõik kolm sammu teeme koos tunnis läbi. PyGame paigaldamiseks on vajalik avada PyCharmis Terminal (all vasakul,
 näeb välja nagu `>_`. Sinna tuleb sisestada käsklus `pip install pygame` ning vajutada ENTER. Kui tekib mingi probleem,
 siis tõsta julgelt käsi, kõik abiõppejõud ongi siin selleks, et teid aidata! Pärast seda saame hakata mängu koodi kallal
-tööd tegema. 
+tööd tegema.
+
+[Siit](https://youtu.be/jMSewTuECrQ?t=40) saad vaadata vajadusel ka videot antud sammu kohta.
 
 ### 🐦 Linnu loomine
 
@@ -70,6 +74,8 @@ screen.blit(bird_img, (self.x, self.y))
 ```
 
 Ava PyCharmis fail `flappy_bird.py`, vajuta ▶️ play nupule, ning näed, et sul ongi ekraanil linnuke!
+
+[Siit](https://youtu.be/jMSewTuECrQ?t=114) saad vaadata vajadusel ka videot antud sammu kohta.
 
 ### 🦅 Linnulennu loomine
 
@@ -106,6 +112,8 @@ Ava PyCharmis fail `flappy_bird.py`, vajuta ▶️ play nupule, ning näed, et s
 
 &nbsp;
 
+    [Siit](https://youtu.be/jMSewTuECrQ?t=229) saad vaadata vajadusel ka videot antud sammu kohta.
+
 2. **Kui mängija vajutab tühikule, peaks linnuke ülespoole hüppama.**
 
     Siin uuendame linnukese kiirust, kuid seekord sätime linnu kiiruse hüppamise kiiruseks.
@@ -117,7 +125,7 @@ Ava PyCharmis fail `flappy_bird.py`, vajuta ▶️ play nupule, ning näed, et s
 
      ```
     # Näidis ekraani koordinaatidest
-    
+
     MIN----->600 (x)
     |   E   |
     |   K   |
@@ -138,17 +146,22 @@ Ava PyCharmis fail `flappy_bird.py`, vajuta ▶️ play nupule, ning näed, et s
 
     Selle funktsiooni all peaksid `self.velocity` muutujaks seadma NEGATIIVSE `BIRD_JUMP`-i väärtuse.
 
+    [Siit](https://youtu.be/jMSewTuECrQ?t=330) saad vaadata vajadusel ka videot antud sammu kohta.
+
+
 3. **Kui linnuke puudutab maad, peaks mäng lõppema.**
 
-    Selle jaoks tuleb realiseerida failis `bird.py` funktsioon `check_collision_with_floor()`. 
-    
+    Selle jaoks tuleb realiseerida failis `bird.py` funktsioon `check_collision_with_floor()`.
+
     Ülevalt alla liikudes y-koordinaat suureneb. Seega, juhul kui linnu y-koordinaat on suurem kui ekraani kõrgus,
     millest on lahutatud linnupildi enda kõrgus, siis tuleks tagastada `True`. Igal muul juhul tuleks tagastada `False`.
 
     Vastavalt eelnevatele lausetele saame sellesse funktsiooni kirjutada järgneva `if` kontroll-lause:
-    
+
     Juhul kui `self.y` on suurem kui `SCREEN_HEIGHT - 50`, siis tagasta (ehk `return`) `True`, muul juhul (`else`)
-    tagasta `False`. 
+    tagasta `False`.
+
+    [Siit](https://youtu.be/jMSewTuECrQ?t=409) saad vaadata vajadusel ka videot antud sammu kohta.
 
 ### 🏃‍♂️💨 Torud liikuma
 
@@ -156,6 +169,8 @@ Lisa `pipe.py` failis `def update():` meetodi alla koodijupp, mis iga kaader lah
 `PIPE_VELOCITY`.
 
 Toru liikumise kiirust (`PIPE_VELOCITY`) võid soovi korral timmida failis `constants.py`.
+
+[Siit](https://youtu.be/jMSewTuECrQ?t=472) saad vaadata vajadusel ka videot antud sammu kohta.
 
 
 ### 👹 Uute torude loomine
@@ -169,7 +184,7 @@ Kui soovime saada kätte järjendist elemendi (meil siis toru) indeksiga 0, siis
 Tasub tähele panna, et miinusmärgiga indeksid võimaldavad järjendi elemente kätte saada "tagantpoolt". Seega viide
 `pipes[-1]` annab meile selle järjendi viimase elemendi.
 
-Uute torude tekitamiseks tuleb kirjutada paar rida koodi. Selleks sobiv koht on failis `flappy_bird.py`. 
+Uute torude tekitamiseks tuleb kirjutada paar rida koodi. Selleks sobiv koht on failis `flappy_bird.py`.
 
 > Õiget kohta näitab kommentaar `# TODO: Generate new pipes`!
 
@@ -196,6 +211,8 @@ kasutame järjendi meetodit `append`, et lisada järjendi lõppu uus toru. Sobiv
 `pipes.append(Pipe())`. Meenutame veel, et kui mõni koodirida on meil lõppenud kooloniga `:`, siis järgnevat rida peame
 koodivea vältimiseks alustama taandreaga (selleks saad kasutada klahvi Tab, mis asub klaviatuuri üleval vasakus nurgas).
 
+[Siit](https://youtu.be/jMSewTuECrQ?t=518) saad vaadata vajadusel ka videot antud sammu kohta.
+
 ### 🔢 Skoori arvutamine
 
 Torude vahelt läbimine peaks mängija skoorile andma plusspunkti.
@@ -208,7 +225,7 @@ keskpunkt, lisame mängijale punkti.
 Torul on `has_been_passed` muutuja, mis võib olla `True` või `False` ehk tõene või väär.
 
 Esiteks otsi failist `flappy_bird.py` üles koodijupp, kus me uuendame iga toru asukohta, ning joonistame igat toru
-ekraanile. 
+ekraanile.
 
 <details>
 <summary>🧐 See peaks välja nägema umbes selline:</summary>
@@ -232,6 +249,8 @@ Selle `for` loopi alla, kus me igast torust üle käime, peaksime lisama järgne
 
 Kui `has_been_passed` on `False` ning `bird.x` on suurem kui `pipe.x + 25`, säti, et `has_been_passed` on tõene ehk
 `True`. Seejärel peaksime ka `score` muutujale liitma ühe. Võiks ka mängida mingit heliefekti? 🤔
+
+[Siit](https://youtu.be/jMSewTuECrQ?t=628) saad vaadata vajadusel ka videot antud sammu kohta.
 
 
 ### 🔊 Heliefektide lisamine
@@ -257,6 +276,8 @@ Näiteks, et mängida `flap_sound`-i, kirjutasime me mängukoodi, et kui mängij
 ```py
 flap_sound.play()
 ```
+
+[Siit](https://youtu.be/jMSewTuECrQ?t=744) saad vaadata vajadusel ka videot antud sammu kohta.
 
 ### ⭐ Boonusülesanded
 - 👑 Tee nii, et skoori suurenedes läheks mäng kiiremaks või raskemaks.
